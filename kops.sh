@@ -15,5 +15,5 @@ chmod +x kops
 mv kops /usr/local/bin/kops
 
 export KOPS_STATE_STORE=s3://riyaz.flm.k8s
-kops create cluster --name kuber.k8s.local --zones us-east-1a,us-east-1b --master-count=1 --master-size t2.medium --master-volume-size 30 --node-count=2 --node-size t2.micro --node-volume-size 30
+kops create cluster --name kuber.k8s.local --zones us-east-1a,us-east-1b --master-count=1 --master-size t2.medium --master-volume-size 30 --node-count=2 --node-size t2.micro --node-volume-size 30 --image ami-020cba7c55df1f615 --yes
 kops update cluster --name kuber.k8s.local --yes --admin
